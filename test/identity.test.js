@@ -20,4 +20,16 @@ describe('identity()', () => {
     };
     expect(_.identity(val)).toBe(val);
   });
+
+  it('returns the boolean if given a boolean', () => {
+    const val = true;
+    expect(_.identity(val)).toBe(val);
+  });
+
+  it('returns the function if given a function', () => {
+    const val = function(a,b) {
+      return a+b;
+    };
+    expect(_.identity(val)).toBe(val);
+  });
 });
