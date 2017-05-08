@@ -26,4 +26,15 @@ describe('indexOf()', () => {
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
 
+  it('if the offset is -1 then it starts searching at the beginning', () => {
+    const arr = ['foo', 'bar', 'baz', 'bar', 'bar'];
+    expect(_.indexOf(arr, 'bar', -1)).toBe(1);
+  });
+
+  it('works correctly for strings as well', () => {
+    const str = 'fob';
+    expect(_.indexOf(str, 'o')).toBe(1);
+  });
+
+
 });
