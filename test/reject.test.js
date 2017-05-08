@@ -18,4 +18,17 @@ describe('reject()', () => {
     const orderItems = _.reject(order, (value) => value === null);
     expect(orderItems).toEqual(['burger', 'ketchup', 'cookie']);
   });
+
+  it('returns an empty array if the object has no values', () => {
+    const order = {
+    };
+    const orderItems = _.reject(order, (value) => value === null);
+    expect(orderItems).toEqual([]);
+  });
+
+  it('returns an empty array if no callback function', () => {
+    const nums = [2, 4, 5, 6, 7, 8, 10, 11];
+    expect(_.reject(nums)).toEqual([]);
+  });
+
 });
