@@ -7,6 +7,16 @@ describe('every()', () => {
       expect(_.every(nums)).toBe(true);
     });
 
+  it('returns true if all numbers in an array-like object are odd and we test for odd numbers', () => {
+    const nums = {
+      key1: 1,
+      key2: 3,
+      key3: 5,
+      key4: 7
+    }
+    expect(_.every(nums, num => num % 2 === 1)).toBe(true);
+  });
+
     it('returns true if all numbers in an array are odd and we test for odd numbers', () => {
       const nums = [1, 3, 5, 7];
       expect(_.every(nums, num => num % 2 === 1)).toBe(true);
