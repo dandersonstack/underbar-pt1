@@ -13,4 +13,10 @@ describe('reduce()', () => {
     expect(result).toEqual(15);
   });
 
+  it('reduces an array of numbers to a product, *with* an explicit initial value not zero for the accumulator', () => {
+    const nums = [1, 2, 3, 4, 5];
+    const result = _.reduce(nums, (a, b) => a * b, 1);
+    expect(result).toEqual(120);
+  });
+
 });
