@@ -11,6 +11,11 @@ describe('contains()', () => {
     expect(_.contains(nums, 7)).toBe(false);
   });
 
+  it('returns true if an string contains the target', () => {
+    const nums = 'abcde';
+    expect(_.contains(nums, 'a')).toBe(true);
+  });
+
   it('returns true if the target value is among the values of an object', () => {
     const ponies = {
       'pony1': 'Fluttershy',
