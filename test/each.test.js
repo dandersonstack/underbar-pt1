@@ -26,6 +26,21 @@ describe('each()', () => {
     expect(count).toBe(3);
   });
 
+  it('iterates only over length number of elements array-like object, passing that element, its corresponding index, and the entire array to the callback', () => {
+    const arrayLikeObj = {
+      length: 2,
+      1: 'a',
+      2: 'b',
+      3: 'c'
+    };
+    let count = 0;
+    _.each(arrayLikeObj, function(element, index, iteratedArrayLikeObj) {
+      expect(element).toEqual(iteratedArrayLikeObj[index]);
+      count += 1;
+    });
+    expect(count).toBe(2);
+  });
+
   it('iterates every property of an object, passing the value, the corresponding key, and the entire object to the callback', () => {
     const obj = {
       name: 'Calvin',
@@ -35,6 +50,16 @@ describe('each()', () => {
     let count = 0;
     _.each(obj, function(value, key, iteratedObj) {
       expect(value).toEqual(iteratedObj[key]);
+      count += 1;
+    });
+    expect(count).toBe(3);
+  });
+
+  it('iterates every character of an string, passing that character, its corresponding index, and the entire array to the callback', () => {
+    const str = 'abc';
+    let count = 0;
+    _.each(str, function(element, index, iteratedArrayLikeObj) {
+      expect(element).toEqual(iteratedArrayLikeObj[index]);
       count += 1;
     });
     expect(count).toBe(3);
