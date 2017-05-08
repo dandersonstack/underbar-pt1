@@ -12,4 +12,9 @@ describe('last()', () => {
   it('returns the whole array if you ask for more elements than it has', () => {
     expect(_.last(['a', 'b', 'c'], 5)).toEqual(['a', 'b', 'c']);
   });
+
+  it('returns the last element of a string if you give it a string', () => {
+    expect(_.last('abc',1)).toEqual('c');
+  });
+
 });
